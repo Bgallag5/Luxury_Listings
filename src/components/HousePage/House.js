@@ -1,36 +1,36 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function House() {
   const currentSlide = useRef(0);
   const sliderRef = useRef();
-  // const [slides, setSlides] = useState(0);
 
+  //on init and on handleSliderNav() position slides based on the new currentSlide
   const positionSlides = () => {
+    //access slides on DOM 
     const slides = document.querySelectorAll(".slide");
-    console.log(slides);
 
+    //each slide is fully translatedX based on the index of the currentSlide 
     slides.forEach((slide, i) => {
-      // console.log(slide);
-      slide.style.transform = `translateX(${100 * (i - currentSlide.current)}%)`;
+      slide.style.transform = `translateX(${
+        100 * (i - currentSlide.current)
+      }%)`;
     });
   };
 
+  //add offset to the currentSlide.current
   const handleSliderNav = (e) => {
     console.log(e);
-    //get direction we are moving
+    //determine the offset and set new currentSlide
     const offset = e.target.dataset.direction === "left" ? -1 : 1;
-    //set currentSlide.current to old +/- offset
     currentSlide.current = currentSlide.current + offset;
-    //call positionSlides() to reposition translateX/Y
+    //call positionSlides() to reposition
     positionSlides();
-
-    console.log(currentSlide.current);
   };
 
+  //on load position slides
   useEffect(() => {
     positionSlides();
   }, []);
-
 
   return (
     <div className="house">
