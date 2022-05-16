@@ -4,12 +4,12 @@ export default function House() {
   const currentSlide = useRef(0);
   const sliderRef = useRef();
 
+  const slides = document.querySelectorAll(".slide");
   //on init and on handleSliderNav() position slides based on the new currentSlide
   const positionSlides = () => {
-    //access slides on DOM 
-    const slides = document.querySelectorAll(".slide");
+    //access slides on DOM
 
-    //each slide is fully translatedX based on the index of the currentSlide 
+    //each slide is fully translatedX based on the index of the currentSlide
     slides.forEach((slide, i) => {
       slide.style.transform = `translateX(${
         100 * (i - currentSlide.current)
@@ -22,6 +22,14 @@ export default function House() {
     console.log(e);
     //determine the offset and set new currentSlide
     const offset = e.target.dataset.direction === "left" ? -1 : 1;
+
+    //error boundries left and right
+    if (offset === 1 && currentSlide.current + 1 === slides.length){
+      return
+    }
+    if (offset === -1 && currentSlide.current === 0){
+      return
+    }
     currentSlide.current = currentSlide.current + offset;
     //call positionSlides() to reposition
     positionSlides();
