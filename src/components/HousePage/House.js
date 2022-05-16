@@ -4,22 +4,23 @@ export default function House() {
   const currentSlide = useRef(0);
   const sliderRef = useRef();
 
-  const slides = document.querySelectorAll(".slide");
+  let slides; 
   //on init and on handleSliderNav() position slides based on the new currentSlide
   const positionSlides = () => {
     //access slides on DOM
-
+    slides = document.querySelectorAll(".slide");
     //each slide is fully translatedX based on the index of the currentSlide
     slides.forEach((slide, i) => {
       slide.style.transform = `translateX(${
         100 * (i - currentSlide.current)
       }%)`;
     });
+    console.log(slides);
   };
 
   //add offset to the currentSlide.current
   const handleSliderNav = (e) => {
-    console.log(e);
+    // console.log(e);
     //determine the offset and set new currentSlide
     const offset = e.target.dataset.direction === "left" ? -1 : 1;
 
@@ -56,6 +57,7 @@ export default function House() {
         </div>
 
         <div className="house__info--content">
+
           <div className="info__general">
             <div className="info__general--photo">
               <img
@@ -109,6 +111,7 @@ export default function House() {
                 </div>
               </div>
             </div>
+
           </div>
           <div className="info__description">
             <p className="info__description--paragraph text-regular">

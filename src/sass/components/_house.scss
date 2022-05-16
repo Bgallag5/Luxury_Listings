@@ -2,14 +2,17 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 95vh;
+  min-height: 95vh;
+  height: auto;
   width: 100%;
-  // border: 1px solid red;
+  // background-color: $color-bluegrey--dull;
   background-color: white;
 
   //left half of all houses
   &__info {
     width: 50%;
+    min-height: 95vh;
+    height: auto;
     // overflow-y: scroll;
     // scrollbar-width: 0;
     // scrollbar-gutter: none;
@@ -37,21 +40,35 @@
       // height: 84vh;
       gap: 1rem;
       height: auto;
+      
       padding: 1rem;
       // border: 2px solid green;
-
+      
       .info__general {
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        //set height to keep photo and overview same height
+        // height: 50%;
+        height: auto;
+
+        @include respond(laptop){
+          flex-direction: column;
+        }
 
         & > * {
           box-shadow: 0px 10px 15px rgba($color-black, 0.2);
           flex: 1;
+          width: 50%;
+          height: 100%;
+
+          @include respond(laptop){
+            height: auto;
+            width: 100%;
+          }
         }
 
         &--photo {
-          width: 50%;
           display: flex;
           background-size: cover;
           border: 1px solid $color-grey--light;
@@ -59,17 +76,23 @@
           .info--photo {
             object-fit: cover;
             width: 100%;
-            height: auto;
+            height: 100%;
           }
         }
 
         &--overview {
-          width: 50%;
-          // height: 100%;
           background: $color-white;
           padding: 0.5rem;
 
+          @include respond(laptop){
+            padding: 3rem 3rem;
+          }
+
           .overview--title {
+
+            @include respond(laptop){
+              margin: 1rem;
+            }
           }
 
           .overview--container {
@@ -91,6 +114,10 @@
               flex-direction: row;
               gap: 0.5rem;
               margin-left: 1rem;
+
+              @include respond(laptop){
+                margin-top: 1rem;
+              }
 
               & > i {
                 color: blue;
@@ -119,6 +146,7 @@
     width: 50%;
     // padding: 0.5rem;
     height: 100%;
+    height: 95vh;
     display: flex;
     justify-content: center;
 
