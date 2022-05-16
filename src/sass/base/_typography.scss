@@ -1,0 +1,30 @@
+body {
+  font-size: 1.3rem;
+}
+
+.heading-primary {
+  font-size: 2.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+//   font-family: "Barlow";
+}
+
+.heading-secondary {
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.text-regular {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $color-grey--dark;
+}
+
+.text-soft {
+}
+
+.text-bold {
+}

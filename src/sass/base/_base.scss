@@ -1,0 +1,36 @@
+// @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,500&family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200&display=swap');
+
+// *{
+//     box-sizing: border-box;
+// }
+
+*, 
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    // font-size: 16px;
+    font-size: 62.5%;
+
+}
+
+
+body{
+    background-color: $color-bluegrey--dull;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Mulish', sans-serif;
+    
+    //prevent horizontal scroll bar
+    overflow-x: hidden;
+    padding: 0rem 5rem;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+// .app-container{
+//     width: 100%;
+// }

@@ -1,0 +1,21 @@
+$color-bluegrey: #d8e2dc;
+$color-bluegrey--dull: #e8e8e4;
+$color-bluegrey--grad: linear-gradient(to left, #{$color-bluegrey}, #{$color-bluegrey--dull});
+  
+
+$color-pink: #fcd5ce;
+$color-pink--dull: #fae1dd;
+$color-pink--bright: #fec5bb;
+$color-pink--grad: linear-gradient(#{$color-pink--dull}, #{$color-pink--bright});
+
+$color-tan: #ffd7ba;
+$color-tan--dark: #fec89a;
+
+$color-white: #ffffff;
+$color-grey: #777;
+$color-grey--light: #999;
+$color-grey--dark: #333;
+
+$color-black: #000000;
+
+
