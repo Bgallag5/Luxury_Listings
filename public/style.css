@@ -83,7 +83,7 @@ body {
   width: auto;
   list-style: none;
   position: absolute;
-  bottom: 0.5rem;
+  bottom: 0rem;
   right: 5%;
   font-size: 1.8rem;
 }
@@ -91,25 +91,29 @@ body {
   position: relative;
   transition: all 0.5s;
   width: fit-content;
+  height: 100%;
+  padding: 1rem;
   text-align: center;
   display: flex;
   justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  backface-visibility: hidden;
 }
 .header__nav--ul .header__nav--li::before {
   content: "";
   z-index: -2;
   position: absolute;
-  padding: 1rem;
-  height: 120%;
-  width: 120%;
+  backface-visibility: hidden;
+  height: 1px;
+  width: 100%;
+  top: 0;
   background: black;
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
-  transition: all 0.5s;
 }
 .header__nav--ul .header__nav--li:hover {
-  transform: scale(1.1);
   color: #fec5bb;
   cursor: pointer;
   z-index: 99;
@@ -117,10 +121,27 @@ body {
 .header__nav--ul .header__nav--li:hover::before {
   z-index: -2;
   opacity: 1;
+  height: 100%;
   visibility: visible;
+  animation: growSlide 0.5s ease-in;
   transform: translateX(0);
 }
 
+@keyframes growSlide {
+  0% {
+    top: 50%;
+    height: 1px;
+    transform: translateX(95%);
+  }
+  25% {
+    top: 0;
+    height: 100%;
+    transform: translateX(95%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .house {
   display: flex;
   flex-direction: row;
