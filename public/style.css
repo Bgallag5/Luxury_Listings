@@ -58,6 +58,9 @@ body {
 .about-section .info__description--paragraph {
   width: clamp(45ch, 50%, 65ch);
 }
+.about-section .booking {
+  margin-top: 2rem;
+}
 
 .header {
   position: sticky;
@@ -133,10 +136,13 @@ body {
     height: 1px;
     transform: translateX(95%);
   }
-  25% {
+  50% {
     top: 0;
     height: 100%;
     transform: translateX(95%);
+  }
+  75% {
+    transform: translateX(85%);
   }
   100% {
     transform: translateX(0);

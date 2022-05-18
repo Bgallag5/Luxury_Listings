@@ -55,7 +55,6 @@
           visibility: hidden;
           transform: translateX(100%);
           // transition: ease-in .5s;
-          
         }
 
         &:hover {
@@ -68,7 +67,7 @@
             opacity: 1;
             height: 100%;
             visibility: visible;
-            animation: growSlide .5s ease-in;
+            animation: growSlide 0.5s ease-in;
             transform: translateX(0);
           }
         }
@@ -77,20 +76,23 @@
   }
 }
 
-
+//nav menu background grow and then slide in
 @keyframes growSlide {
-    0%{
-      top: 50%;
-      height: 1px;
-      transform: translateX(95%);
-    }
-    25%{
-      top: 0;
-      height: 100%;
-      transform: translateX(95%);
-    }
+  0% {
+    top: 50%;
+    height: 1px;
+    transform: translateX(95%);
+  }
+  50% {
+    top: 0;
+    height: 100%;
+    transform: translateX(95%);
+  }
+  75% {
+    transform: translateX(85%);
+  }
 
-    100%{
-      transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }
