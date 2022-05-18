@@ -1,0 +1,13 @@
+.about-section{
+    height: 95vh;
+    width: 100%;
+    background-color: $color-white;
+    padding: 5rem 3rem;
+
+    .info__description{
+
+        &--paragraph{
+            width: clamp(45ch, 50%, 65ch);
+        }
+    }
+}

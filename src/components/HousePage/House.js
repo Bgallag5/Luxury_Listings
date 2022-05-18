@@ -45,14 +45,15 @@ export default function House() {
     <div className="house">
       <div className="house__info">
         <div className="house__info--header">
-          <div>
+          <div className="heading--address">
             <h2 className="header--title heading-primary">House Name</h2>
-            <h3 className="header--address heading-secondary">
+            <h3 className="heading-secondary">
               1804 Covington Ln, Oahu Hawaii
             </h3>
           </div>
-          <div>
+          <div className="heading--price">
             <h2 className="heading-secondary"> $1,000,000</h2>
+            <h2 className="text-regular"> $1,400/month</h2>
           </div>
         </div>
 
@@ -63,7 +64,12 @@ export default function House() {
               <img
                 src={require("../../assets/images/poolhouse--1.jpeg")}
                 alt=""
-                className="info--photo"
+                className="info--photo info--photo--main "
+              />
+              <img
+                src={require("../../assets/images/poolhouse--2.jpeg")}
+                alt=""
+                className="info--photo info--photo--extra"
               />
             </div>
             <div className="info__general--overview overview">
@@ -113,22 +119,7 @@ export default function House() {
             </div>
 
           </div>
-          <div className="info__description">
-            <p className="info__description--paragraph text-regular">
-              Located in an Oceanfront Community along the resort coast on the
-              Big Island of Hawaii is this stunning luxury residence. This
-              residence offers an array of features with a lap pool & elevated
-              spa, game room with a pool table and shuffleboard, BBQ and fire
-              pits area, wet bar area with spacious indoor & outdoor kitchens
-              plus a great room. Each room is gorgeously furnished and reflects
-              quality interior design. The home has spectacular panoramic views
-              of the ocean, surf, beach, mountain, sunsets, and overlooks the
-              protected Anchialine ponds. Located within walking distance to the
-              King's and Queen's Market Place, shops & restaurants, Anaeho’omalu
-              bay with white sandy beach and snorkeling, and Waikoloa golf
-              course nearby.
-            </p>
-          </div>
+
         </div>
       </div>
 

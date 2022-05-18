@@ -7,6 +7,7 @@ const house1 = {
     images: [],
     imgSrc: 'poolhouse',
     coverImg: 'poolhouse--10.jpg',
+    coverImg2: 'poolhouse--10.jpg',
     address: '1804 COVINGTON LN, OAHU HAWAII',
     overview: {
         heat: 'Central Hear',

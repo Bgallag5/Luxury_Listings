@@ -44,6 +44,21 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.about-section {
+  height: 95vh;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 5rem 3rem;
+}
+.about-section .info__description--paragraph {
+  width: clamp(45ch, 50%, 65ch);
+}
+
 .header {
   position: sticky;
   height: 8vh;
@@ -118,33 +133,42 @@ body {
 .house__info {
   width: 50%;
   min-height: 95vh;
-  height: auto;
+  height: 95vh;
 }
 .house__info--header {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   padding: 1rem;
-  height: 10rem;
+  height: 15vh;
   background-color: #ffffff;
   border-bottom: 2px solid #fae1dd;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 .house__info--header > * {
-  align-self: baseline;
-  flex: 1;
+  width: 100%;
+}
+.house__info--header .heading--price {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 25%;
+  text-align: right;
+  font-family: "Barlow";
 }
 .house__info--content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: auto;
-  padding: 1rem;
+  height: 80vh;
+  padding: 1rem 1rem 0rem 1rem;
 }
 .house__info--content .info__general {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  height: auto;
+  height: 100%;
+  position: relative;
 }
 @media only screen and (max-width: 1440px) {
   .house__info--content .info__general {
@@ -152,15 +176,16 @@ body {
   }
 }
 .house__info--content .info__general > * {
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   flex: 1;
   width: 50%;
   height: 100%;
 }
 @media only screen and (max-width: 1440px) {
   .house__info--content .info__general > * {
-    height: auto;
-    width: 100%;
+    flex: 0;
+    height: 100%;
+    width: auto;
   }
 }
 .house__info--content .info__general--photo {
@@ -168,29 +193,57 @@ body {
   background-size: cover;
   border: 1px solid #999;
 }
+@media only screen and (max-width: 1440px) {
+  .house__info--content .info__general--photo {
+    height: 39%;
+    flex-direction: row;
+    gap: 0.5rem;
+    border: none;
+    width: 100%;
+  }
+}
 .house__info--content .info__general--photo .info--photo {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
+.house__info--content .info__general--photo .info--photo--extra {
+  opacity: 0;
+  visibility: hidden;
+}
+@media only screen and (max-width: 1440px) {
+  .house__info--content .info__general--photo .info--photo--extra {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 .house__info--content .info__general--overview {
   background: #ffffff;
-  padding: 0.5rem;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
 }
 @media only screen and (max-width: 1440px) {
   .house__info--content .info__general--overview {
-    padding: 3rem 3rem;
+    position: absolute;
+    top: auto;
+    height: 60%;
+    bottom: 0;
   }
 }
-@media only screen and (max-width: 1440px) {
-  .house__info--content .info__general--overview .overview--title {
-    margin: 1rem;
-  }
+.house__info--content .info__general--overview .overview--title {
+  margin: 1rem;
 }
 .house__info--content .info__general--overview .overview--container {
   display: flex;
   flex-direction: row;
-  height: 90%;
+  height: auto;
+  margin: 2rem;
+}
+@media only screen and (max-width: 1440px) {
+  .house__info--content .info__general--overview .overview--container {
+    justify-content: center;
+  }
 }
 .house__info--content .info__general--overview .overview--container > * {
   display: flex;
@@ -198,17 +251,20 @@ body {
   justify-content: space-around;
   gap: 0.5rem;
   flex: 1;
-  width: 100%;
 }
 .house__info--content .info__general--overview .overview--container .overview--item {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   margin-left: 1rem;
+  font-size: 1.8rem !important;
+  text-align: left;
 }
 @media only screen and (max-width: 1440px) {
   .house__info--content .info__general--overview .overview--container .overview--item {
     margin-top: 1rem;
+    gap: 1rem;
+    margin-left: 1.5rem;
   }
 }
 .house__info--content .info__general--overview .overview--container .overview--item > i {
@@ -230,6 +286,7 @@ body {
   height: 95vh;
   display: flex;
   justify-content: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 .house__photos--slider {
   position: relative;

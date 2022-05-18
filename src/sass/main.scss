@@ -2,7 +2,8 @@
 @import './abstracts/mixins';
 @import './base/typography.scss';
 @import './base/base';
+@import './base/utilities';
 
-
+@import './components/house-about';
 @import './components/header';
 @import './components/house';
