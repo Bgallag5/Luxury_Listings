@@ -4,7 +4,7 @@ export default function House() {
   const currentSlide = useRef(0);
   const sliderRef = useRef();
 
-  let slides; 
+  let slides;
   //on init and on handleSliderNav() position slides based on the new currentSlide
   const positionSlides = () => {
     //access slides on DOM
@@ -25,11 +25,11 @@ export default function House() {
     const offset = e.target.dataset.direction === "left" ? -1 : 1;
 
     //error boundries left and right
-    if (offset === 1 && currentSlide.current + 1 === slides.length){
-      return
+    if (offset === 1 && currentSlide.current + 1 === slides.length) {
+      return;
     }
-    if (offset === -1 && currentSlide.current === 0){
-      return
+    if (offset === -1 && currentSlide.current === 0) {
+      return;
     }
     currentSlide.current = currentSlide.current + offset;
     //call positionSlides() to reposition
@@ -58,19 +58,22 @@ export default function House() {
         </div>
 
         <div className="house__info--content">
-
           <div className="info__general">
-            <div className="info__general--photo">
-              <img
-                src={require("../../assets/images/poolhouse--1.jpeg")}
-                alt=""
-                className="info--photo info--photo--main "
-              />
-              <img
-                src={require("../../assets/images/poolhouse--2.jpeg")}
-                alt=""
-                className="info--photo info--photo--extra"
-              />
+            <div className="info__general--photos">
+              <div className="photo--container">
+                <img
+                  src={require("../../assets/images/poolhouse--1.jpeg")}
+                  alt=""
+                  className="info--photo info--photo--main "
+                />
+              </div>
+              <div className="photo--container">
+                <img
+                  src={require("../../assets/images/poolhouse--2.jpeg")}
+                  alt=""
+                  className="info--photo info--photo--extra"
+                />
+              </div>
             </div>
             <div className="info__general--overview overview">
               <h2 className="overview--title heading-secondary">
@@ -117,9 +120,7 @@ export default function House() {
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
 

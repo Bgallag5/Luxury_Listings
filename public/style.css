@@ -195,6 +195,7 @@ body {
   flex-direction: row;
   gap: 1rem;
   height: 100%;
+  width: 100%;
   position: relative;
 }
 @media only screen and (max-width: 1440px) {
@@ -215,13 +216,28 @@ body {
     width: auto;
   }
 }
-.house__info--content .info__general--photo {
+.house__info--content .info__general--photos {
+  display: flex;
+  border: 1px solid #999;
+  width: 50%;
+  flex-direction: column;
+  border: none;
+}
+.house__info--content .info__general--photos .photo--container {
   display: flex;
   background-size: cover;
-  border: 1px solid #999;
+  height: 50%;
+}
+.house__info--content .info__general--photos .photo--container .info--photo {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.house__info--content .info__general--photos .photo--container .info--photo--main {
+  border-bottom: 1px solid #000000;
 }
 @media only screen and (max-width: 1440px) {
-  .house__info--content .info__general--photo {
+  .house__info--content .info__general--photos {
     height: 39%;
     flex-direction: row;
     gap: 0.5rem;
@@ -229,63 +245,33 @@ body {
     width: 100%;
   }
 }
-.house__info--content .info__general--photo .info--photo {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-.house__info--content .info__general--photo .info--photo--extra {
-  opacity: 0;
-  visibility: hidden;
-}
-@media only screen and (max-width: 1440px) {
-  .house__info--content .info__general--photo .info--photo--extra {
-    opacity: 1;
-    visibility: visible;
-  }
-}
 .house__info--content .info__general--overview {
   background: #ffffff;
   padding: 1rem;
   height: 100%;
-  width: 100%;
-}
-@media only screen and (max-width: 1440px) {
-  .house__info--content .info__general--overview {
-    position: absolute;
-    top: auto;
-    height: 60%;
-    bottom: 0;
-  }
 }
 .house__info--content .info__general--overview .overview--title {
   margin: 1rem;
 }
 .house__info--content .info__general--overview .overview--container {
   display: flex;
-  flex-direction: row;
-  height: auto;
+  flex-direction: column;
+  height: 80%;
   margin: 2rem;
-}
-@media only screen and (max-width: 1440px) {
-  .house__info--content .info__general--overview .overview--container {
-    justify-content: center;
-  }
 }
 .house__info--content .info__general--overview .overview--container > * {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 0.5rem;
-  flex: 1;
+  height: 100%;
 }
 .house__info--content .info__general--overview .overview--container .overview--item {
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
-  margin-left: 1rem;
   font-size: 1.8rem !important;
   text-align: left;
+  margin-left: 1.5rem;
+  gap: 1.5rem;
 }
 @media only screen and (max-width: 1440px) {
   .house__info--content .info__general--overview .overview--container .overview--item {
