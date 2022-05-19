@@ -1,18 +1,130 @@
-.about-section{
-    height: 95vh;
+.about-section {
+  height: 95vh;
+  width: 100%;
+  background-color: $color-grey--background;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about__top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+  justify-content: center;
+
+  & > * {
     width: 100%;
-    background-color: $color-white;
-    padding: 5rem 3rem;
+    //   border: 1px solid blue;
+  }
 
-    .info__description{
-
-        &--paragraph{
-            width: clamp(45ch, 50%, 65ch);
-        }
+  .description {
+    &--paragraph {
+      width: clamp(45ch, 100%, 65ch);
+      //   width: 100%;
     }
+  }
 
-    .booking{
-        margin-top: 2rem;
+  .review {
+    // height: auto;
+    // border: 1px solid brown;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    height: 100%;
+    padding-left: 2rem;
+    &__card {
+      display: flex;
+      flex-direction: column;
+      height: 20rem;
+      width: 100%;
+      box-shadow: $card-shadow;
+      background-color: $color-white;
+
+      & > * {
+          position: relative;
+      }
+
+      &--top {
+          height: 60%;
+        max-height: 60%;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
         
+        .review--text{
+            height: 100%;
+            line-height: 2;
+            width: clamp(25ch, 80%, 45ch);
+
+            &::before{
+                content: '"';
+                position: absolute;
+                transform: scale(5) rotate(5deg);
+                color: $color-grey--light;
+                top: 0;
+                left: 0;
+                // font-size: 4rem;
+                margin: 2rem;
+            }
+
+        }
+      }
+      &--bottom {
+        height: 40%;
+        display: flex;
+        flex-direction: row;
+
+        & > * {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .img--container {
+          background-size: cover;
+          position: relative;
+          overflow: hidden;
+          width: 25%;
+          // height: 100%;
+          clip-path: circle(35% at 50% 50%);
+
+          .review__card--img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .card--namedate {
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          left: 0;
+        }
+
+        .card--rating {
+          font-size: 2rem;
+          color: rgb(255, 41, 77);
+
+          margin: 0 auto;
+          margin-right: 2rem;
+        }
+      }
     }
+  }
+}
+
+.about__bottom {
+  .booking {
+    display: flex;
+    flex-direction: row;
+
+    &__calendar {
+      border: 1px solid black;
+    }
+  }
 }
