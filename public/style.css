@@ -504,5 +504,12 @@ body {
 .login__input:focus {
   border: none;
 }
+.login__button {
+  width: 8rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50px;
+  background-color: #fcd5ce;
+}
 
 /*# sourceMappingURL=style.css.map */
