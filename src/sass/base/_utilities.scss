@@ -1,4 +1,17 @@
-.hidden{
-    opacity: 0;
-    visibility: hidden;
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.page {
+  min-height: 95vh;
+  min-width: 100%;
+  background-color: $color-white;
+}
+
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

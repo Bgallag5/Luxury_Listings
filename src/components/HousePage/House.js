@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import HouseAbout from "../HouseAbout/HouseAbout";
 
 export default function House() {
   const currentSlide = useRef(0);
@@ -42,124 +43,127 @@ export default function House() {
   }, []);
 
   return (
-    <div className="house">
-      <div className="house__info">
-        <div className="house__info--header">
-          <div className="heading--address">
-            <h2 className="header--title heading-primary">House Name</h2>
-            <h3 className="heading-secondary">
-              1804 Covington Ln, Oahu Hawaii
-            </h3>
+    <>
+      <div className="house">
+        <div className="house__info">
+          <div className="house__info--header">
+            <div className="heading--address">
+              <h2 className="header--title heading-primary">House Name</h2>
+              <h3 className="heading-secondary">
+                1804 Covington Ln, Oahu Hawaii
+              </h3>
+            </div>
+            <div className="heading--price">
+              <h2 className="heading-secondary"> $1,000,000</h2>
+              <h2 className="text-regular"> $1,400/month</h2>
+            </div>
           </div>
-          <div className="heading--price">
-            <h2 className="heading-secondary"> $1,000,000</h2>
-            <h2 className="text-regular"> $1,400/month</h2>
+
+          <div className="house__info--content">
+            <div className="info__general">
+              <div className="info__general--photos">
+                <div className="photo--container">
+                  <img
+                    src={require("../../assets/images/poolhouse--1.jpeg")}
+                    alt=""
+                    className="info--photo info--photo--main "
+                  />
+                </div>
+                <div className="photo--container">
+                  <img
+                    src={require("../../assets/images/poolhouse--2.jpeg")}
+                    alt=""
+                    className="info--photo info--photo--extra"
+                  />
+                </div>
+              </div>
+              <div className="info__general--overview overview">
+                <h2 className="overview--title heading-secondary">
+                  Property Overview
+                </h2>
+                <div className="overview--container">
+                  <div>
+                    <span className="overview--item text-regular">
+                      <i className="fa-solid fa-bed"></i>5 Bedrooms
+                    </span>
+                    <span className="overview--item text-regular">
+                      <i className="fa fa-square-parking"></i>4 Car Parking
+                    </span>
+                    <span className="overview--item text-regular">
+                      <i className="fa-solid fa-temperature-arrow-up"></i>
+                      Central Air
+                    </span>
+                    <span className="overview--item text-regular">
+                      <i className="fa-regular fa-snowflake"></i>
+                      Central Heat
+                    </span>
+                    <span className="overview--item text-regular">
+                      <i className="fa-solid fa-calendar-days"></i>
+                      Built in 2010
+                    </span>
+                  </div>
+                  <div>
+                    <span className="overview--item text-regular">
+                      <i className="fa-solid fa-dog"></i>
+                      Pets: Allowed
+                    </span>
+                    <span className="overview--item text-regular">
+                      <i className="fa-solid fa-house"></i>
+                      Lot Size: 1.5 acres
+                    </span>
+                    <span className="overview--item text-regular">
+                      <i className="fa-solid fa-toilet"></i>
+                      Applicances: Oven, Dishwasher, Washer/Dryer, Refrigerator,
+                    </span>
+                    <span className="overview--item text-regular">
+                      <i className="fa-solid fa-fire-flame-simple"></i>
+                      Utilities: Electricity, Natural Gas
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="house__info--content">
-          <div className="info__general">
-            <div className="info__general--photos">
-              <div className="photo--container">
-                <img
-                  src={require("../../assets/images/poolhouse--1.jpeg")}
-                  alt=""
-                  className="info--photo info--photo--main "
-                />
-              </div>
-              <div className="photo--container">
-                <img
-                  src={require("../../assets/images/poolhouse--2.jpeg")}
-                  alt=""
-                  className="info--photo info--photo--extra"
-                />
-              </div>
-            </div>
-            <div className="info__general--overview overview">
-              <h2 className="overview--title heading-secondary">
-                Property Overview
-              </h2>
-              <div className="overview--container">
-                <div>
-                  <span className="overview--item text-regular">
-                    <i className="fa-solid fa-bed"></i>5 Bedrooms
-                  </span>
-                  <span className="overview--item text-regular">
-                    <i className="fa fa-square-parking"></i>4 Car Parking
-                  </span>
-                  <span className="overview--item text-regular">
-                    <i className="fa-solid fa-temperature-arrow-up"></i>
-                    Central Air
-                  </span>
-                  <span className="overview--item text-regular">
-                    <i className="fa-regular fa-snowflake"></i>
-                    Central Heat
-                  </span>
-                  <span className="overview--item text-regular">
-                    <i className="fa-solid fa-calendar-days"></i>
-                    Built in 2010
-                  </span>
-                </div>
-                <div>
-                  <span className="overview--item text-regular">
-                    <i className="fa-solid fa-dog"></i>
-                    Pets: Allowed
-                  </span>
-                  <span className="overview--item text-regular">
-                    <i className="fa-solid fa-house"></i>
-                    Lot Size: 1.5 acres
-                  </span>
-                  <span className="overview--item text-regular">
-                    <i className="fa-solid fa-toilet"></i>
-                    Applicances: Oven, Dishwasher, Washer/Dryer, Refrigerator,
-                  </span>
-                  <span className="overview--item text-regular">
-                    <i className="fa-solid fa-fire-flame-simple"></i>
-                    Utilities: Electricity, Natural Gas
-                  </span>
-                </div>
-              </div>
-            </div>
+        <div className="house__photos">
+          <div ref={sliderRef} className="house__photos--slider">
+            <img
+              data-slide={0}
+              className="house__photos--slider-img slide"
+              src={require("../../assets/images/poolhome-1.jpg")}
+              alt="home"
+            />
+            <img
+              data-slide={1}
+              className="house__photos--slider-img slide"
+              src={require("../../assets/images/poolhome-2.jpg")}
+              alt="home"
+            />
+            <img
+              data-slide={2}
+              className="house__photos--slider-img slide"
+              src={require("../../assets/images/poolhome-3.jpg")}
+              alt="home"
+            />
+            <button
+              data-direction="left"
+              onClick={(e) => handleSliderNav(e)}
+              className="nav__btn nav__btn--left"
+            >
+              &larr;
+            </button>
+            <button
+              data-direction="right"
+              onClick={(e) => handleSliderNav(e)}
+              className="nav__btn nav__btn--right"
+            >
+              &rarr;
+            </button>
           </div>
         </div>
       </div>
-
-      <div className="house__photos">
-        <div ref={sliderRef} className="house__photos--slider">
-          <img
-            data-slide={0}
-            className="house__photos--slider-img slide"
-            src={require("../../assets/images/poolhome-1.jpg")}
-            alt="home"
-          />
-          <img
-            data-slide={1}
-            className="house__photos--slider-img slide"
-            src={require("../../assets/images/poolhome-2.jpg")}
-            alt="home"
-          />
-          <img
-            data-slide={2}
-            className="house__photos--slider-img slide"
-            src={require("../../assets/images/poolhome-3.jpg")}
-            alt="home"
-          />
-          <button
-            data-direction="left"
-            onClick={(e) => handleSliderNav(e)}
-            className="nav__btn nav__btn--left"
-          >
-            &larr;
-          </button>
-          <button
-            data-direction="right"
-            onClick={(e) => handleSliderNav(e)}
-            className="nav__btn nav__btn--right"
-          >
-            &rarr;
-          </button>
-        </div>
-      </div>
-    </div>
+      <HouseAbout />
+    </>
   );
 }
